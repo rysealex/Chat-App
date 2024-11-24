@@ -21,5 +21,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:riv_corner_radius="8dp"/>
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imagesSignOut"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/background_icon"
+        android:src="@drawable/ic_logout"
+        android:padding="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:tint="@color/white"/>
+    
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/imageProfile"
+        app:layout_constraintBottom_toBottomOf="@id/imageProfile"
+        app:layout_constraintStart_toEndOf="@id/imageProfile"
+        app:layout_constraintEnd_toStartOf="@id/imagesSignOut"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
