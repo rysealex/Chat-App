@@ -12,4 +12,5 @@
     <string name="sign_up">Sign Up\n</string>
     <string name="firstName">First Name\n</string>
     <string name="lastName">Last Name</string>
+    <string name="chat">Chat</string>
 </resources>

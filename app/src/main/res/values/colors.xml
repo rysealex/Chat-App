@@ -8,7 +8,7 @@
     <color name="secondary_text">#9689B5</color>
     <color name="input_background">#FFFFFF</color>
     <color name="icon_background">#494848</color>
-    <color name="error">#FFFFFFFF</color>
+    <color name="error">#CDBC27</color>
     <color name="received_message_background">#FFFFFFFF</color>
     <color name="green">#4CAF50</color>
 </resources>

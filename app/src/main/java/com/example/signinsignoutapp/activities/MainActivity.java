@@ -17,6 +17,7 @@ import com.example.signinsignoutapp.R;
 import com.example.signinsignoutapp.activities.SignUpActivity;
 import com.example.signinsignoutapp.databinding.ActivityMainBinding;
 import com.example.signinsignoutapp.databinding.ActivitySignInBinding;
+import com.example.signinsignoutapp.models.User;
 import com.example.signinsignoutapp.utilities.Constants;
 import com.example.signinsignoutapp.utilities.PreferenceManager;
 import com.google.firebase.firestore.DocumentReference;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListener() {
         binding.imagesSignOut.setOnClickListener(v -> signOut());
+        binding.fabNewChat.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), UserActivity.class)));
     }
 
     private void loadUserDetails() {
