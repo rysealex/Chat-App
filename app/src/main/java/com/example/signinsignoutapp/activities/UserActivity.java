@@ -1,5 +1,6 @@
 package com.example.signinsignoutapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.signinsignoutapp.R;
 import com.example.signinsignoutapp.adapters.UsersAdapter;
 import com.example.signinsignoutapp.databinding.ActivityUserBinding;
+import com.example.signinsignoutapp.listeners.UserListener;
 import com.example.signinsignoutapp.models.User;
 import com.example.signinsignoutapp.utilities.Constants;
 import com.example.signinsignoutapp.utilities.PreferenceManager;
@@ -23,7 +25,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity implements UserListener {
 
     private ActivityUserBinding binding;
     private PreferenceManager preferenceManager;
@@ -64,7 +66,7 @@ public class UserActivity extends AppCompatActivity {
                             users.add(user);
                         }
                         if (users.size() > 0) {
-                            UsersAdapter usersAdapter = new UsersAdapter(users);
+                            UsersAdapter usersAdapter = new UsersAdapter(users, this);
                             binding.userRecyclerView.setAdapter(usersAdapter);
                             binding.userRecyclerView.setVisibility(View.VISIBLE);
                         } else {
@@ -87,5 +89,13 @@ public class UserActivity extends AppCompatActivity {
         } else {
             binding.progressBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    @Override
+    public void onUserClicked(User user) {
+        Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+        intent.putExtra(Constants.KEY_USER, user);
+        startActivity(intent);
+        finish();
     }
 }
