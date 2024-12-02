@@ -58,6 +58,8 @@
             android:id="@+id/progressBar"
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/primary"
             android:layout_gravity="center"/>
 
         <TextView
